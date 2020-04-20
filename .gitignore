@@ -3,3 +3,5 @@ target
 .project
 server/.classpath
 webapp/.classpath
+server/bin
+webapp/bin
