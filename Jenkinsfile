@@ -18,7 +18,7 @@ pipeline {
                 echo 'CS - Building ...'
                 sh 'mvn clean package'
                 echo "CS - Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
-                sh 'docker build . -t tomcatwebapp:${env.BUILD_ID}'
+                sh "docker build . -t tomcatwebapp:${env.BUILD_ID}"
             }
         }
     }
