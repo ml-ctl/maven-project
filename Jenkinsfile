@@ -15,6 +15,7 @@ pipeline {
             steps {
                 echo "CS - Building ..."
                 sh "mvn clean package"
+                sh "source /etc/profile"
                 sh "docker build . -t tomcatwebapp:${env.BUILD_ID}"
             }
         }
