@@ -5,6 +5,10 @@ pipeline {
         maven 'localMaven'
     }
     
+    environment {
+        PATH = '/usr/local/bin:$PATH'
+    }
+
     stages {
         stage('Init') {
             steps {
@@ -15,7 +19,6 @@ pipeline {
             steps {
                 echo "CS - Building ..."
                 sh "mvn clean package"
-                sh "source /etc/profile"
                 echo "path - ${PATH}"
                 sh "docker build . -t tomcatwebapp:${env.BUILD_ID}"
             }
