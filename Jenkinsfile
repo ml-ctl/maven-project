@@ -4,10 +4,6 @@ pipeline {
     tools {
         maven 'localMaven'
     }
-    
-    environment {
-        PATH = '/usr/local/bin:$PATH'
-    }
 
     stages {
         stage('Init') {
