@@ -6,6 +6,11 @@ pipeline {
     }
     
     stages {
+        stage('Init') {
+            steps {
+                echo "path - ${PATH}"
+            }
+        }
         stage('Build') {
             steps {
                 echo "CS - Building ..."
